@@ -22,11 +22,15 @@ const Auth = () => {
 
   const login = useCallback(async () => {
     try {
-      await signIn('credentials', {
+      const result = await signIn('credentials', {
         email,
         password,
         redirect: false,
       })
+
+      if (result?.error) {
+        return
+      }
 
       router.push('/')
     } catch (error) {
