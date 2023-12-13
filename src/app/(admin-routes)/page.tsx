@@ -1,5 +1,3 @@
-import { getServerSession } from 'next-auth'
-import { nextAuthOptions } from '../api/auth/[...nextauth]/route'
 import { LogoutButton } from '@/components'
 
 export default async function Home() {
