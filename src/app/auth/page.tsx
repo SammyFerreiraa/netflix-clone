@@ -4,10 +4,11 @@ import { Input } from '@/components'
 import { useCallback, useState } from 'react'
 import axios from 'axios'
 import { signIn } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
+
+import { FcGoogle } from 'react-icons/fc'
+import { FaGithub } from 'react-icons/fa'
 
 const Auth = () => {
-  const router = useRouter()
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
@@ -32,11 +33,11 @@ const Auth = () => {
         return
       }
 
-      router.push('/')
+      window.location.assign('/')
     } catch (error) {
       console.log(error)
     }
-  }, [email, password, router])
+  }, [email, password])
 
   const register = useCallback(async () => {
     try {
@@ -100,6 +101,20 @@ const Auth = () => {
             >
               {variant === 'login' ? 'Login' : 'Sign up'}
             </button>
+            <div className="mt-8 flex flex-row items-center justify-center gap-4">
+              <div
+                onClick={() => signIn('google', { callbackUrl: '/' })}
+                className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white transition hover:opacity-80"
+              >
+                <FcGoogle />
+              </div>
+              <div
+                onClick={() => signIn('github', { callbackUrl: '/' })}
+                className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white transition hover:opacity-80"
+              >
+                <FaGithub />
+              </div>
+            </div>
             <p className="mt-12 text-sm text-neutral-500">
               {variant === 'login'
                 ? 'First time using Netflix?'
