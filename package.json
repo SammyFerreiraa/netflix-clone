@@ -29,7 +29,7 @@
     "@types/bcrypt": "^5.0.2",
     "@types/jest": "^29.5.11",
     "@types/node": "^20.10.4",
-    "@types/react": "^18.2.43",
+    "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.17",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.55.0",
@@ -42,5 +42,10 @@
     "tailwindcss": "^3.3.6",
     "ts-jest": "^29.1.1",
     "typescript": "^5.3.3"
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
   }
 }
