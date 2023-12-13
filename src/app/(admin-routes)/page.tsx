@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <>
       <h1 className="text-4xl text-white">Netflix Clone</h1>
-      <p className="text-4xl text-white">Loggued in as : {data?.user?.email}</p>
+      <p className="text-4xl text-white">Logged in as : {data?.user?.name}</p>
       <LogoutButton />
     </>
   )
