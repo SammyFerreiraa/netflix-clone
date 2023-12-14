@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { BsFillPlayFill } from 'react-icons/bs'
+import FavoriteButton from './FavoriteButton'
 
 interface MovieCardProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -31,6 +32,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             >
               <BsFillPlayFill size={30} />
             </div>
+            <FavoriteButton movieId={data?.id} />
           </div>
           <p className="mt-4 text-sm font-semibold text-green-400 lg:text-base">
             New <span className="text-white">2023</span>
