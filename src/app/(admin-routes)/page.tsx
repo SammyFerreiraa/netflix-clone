@@ -1,11 +1,9 @@
-import { LogoutButton } from '@/components'
+import { Navbar } from '@/components/navbar'
 
 export default async function Home() {
   return (
     <>
-      <h1 className="text-4xl text-white">Netflix Clone</h1>
-      <p className="text-4xl text-white">Logged in as : </p>
-      <LogoutButton />
+      <Navbar />
     </>
   )
 }
