@@ -1,5 +1,5 @@
 import { getServerSession } from 'next-auth'
-import { nextAuthOptions } from '../api/auth/[...nextauth]/route'
+import nextAuthOptions from '@/app/api/auth/[...nextauth]/auth'
 import { redirect } from 'next/navigation'
 
 type PrivateLayoutProps = {
