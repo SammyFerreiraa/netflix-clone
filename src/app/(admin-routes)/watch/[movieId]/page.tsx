@@ -2,9 +2,8 @@
 
 import React from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import useMovie from '@/hooks/useMovie'
-
 import { AiOutlineArrowLeft } from 'react-icons/ai'
+import useMovie from '@/hooks/useMovie'
 
 const Page = () => {
   const router = useRouter()
