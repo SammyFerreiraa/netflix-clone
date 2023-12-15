@@ -8,8 +8,6 @@ export async function POST(req: Request) {
   const { currentUser } = await serverAuth()
 
   const { movieId } = await req.json()
-  console.log(movieId)
-  console.log(currentUser)
 
   const existingMovie = await prismadb.movie.findUnique({
     where: { id: movieId },
