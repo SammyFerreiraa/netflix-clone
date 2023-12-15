@@ -4,6 +4,8 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { BsFillPlayFill } from 'react-icons/bs'
 import FavoriteButton from './FavoriteButton'
+import useInfoModal from '@/hooks/useInfoModal'
+import { BiChevronDown } from 'react-icons/bi'
 
 interface MovieCardProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -12,6 +14,7 @@ interface MovieCardProps {
 
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
   const route = useRouter()
+  const { openModal } = useInfoModal()
   return (
     <div className="group relative col-span-1 h-[12vh] bg-zinc-900 md:h-[17vh] lg:h-[23vh]">
       <img
@@ -35,6 +38,16 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
               <BsFillPlayFill size={30} />
             </div>
             <FavoriteButton movieId={data?.id} />
+            <div
+              onClick={() => openModal(data?.id)}
+              className="group/item ml-auto flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-2 border-white transition hover:border-neutral-300 lg:h-10 lg:w-10"
+            >
+              <BiChevronDown
+                siz={30}
+                className="w4 text-white group-hover/item:text-neutral-300"
+                size={20}
+              />
+            </div>
           </div>
           <p className="mt-4 text-sm font-semibold text-green-400 lg:text-base">
             New <span className="text-white">2023</span>

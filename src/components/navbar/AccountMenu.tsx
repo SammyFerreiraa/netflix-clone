@@ -1,13 +1,15 @@
-import { signOut } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 
 interface AccountMenuProps {
   visible?: boolean
 }
 
 const AccountMenu: React.FC<AccountMenuProps> = ({ visible }) => {
+  const { data } = useSession()
   if (!visible) {
     return null
   }
+
   return (
     <div className="absolute right-0 top-14 flex w-56 flex-col border-2 border-gray-800 bg-black py-5">
       <div className="flex flex-col gap-3">
@@ -18,7 +20,7 @@ const AccountMenu: React.FC<AccountMenuProps> = ({ visible }) => {
             alt="profile"
           />
           <p className="text-sm text-white group-hover/item:underline">
-            Username
+            {data?.user?.name}
           </p>
         </div>
         <hr className="my-4 h-px border-0 bg-gray-600" />
