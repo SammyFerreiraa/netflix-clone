@@ -7,7 +7,7 @@ import FavoriteButton from './FavoriteButton'
 
 interface InfoModalProps {
   visible?: boolean
-  onClose: any
+  onClose: () => void
 }
 const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
   const [isVisible, setIsVisible] = useState(!!visible)

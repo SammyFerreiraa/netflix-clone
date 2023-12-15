@@ -2,7 +2,6 @@ import { without } from 'lodash'
 
 import prismadb from '@/../lib/prismadb'
 import serverAuth from '@/../lib/serverAuth'
-import { NextApiRequest } from 'next'
 
 export async function POST(req: Request) {
   const { currentUser } = await serverAuth()

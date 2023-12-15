@@ -5,7 +5,6 @@ import axios from 'axios'
 
 import { AiOutlinePlus, AiOutlineCheck } from 'react-icons/ai'
 import useFavorites from '@/hooks/useFavorites'
-import { useSession } from 'next-auth/react'
 import useCurrentUser from '@/hooks/UseCurrentUser'
 
 interface FavoriteButtonProps {
